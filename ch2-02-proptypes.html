@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>NO.03 Prop Types</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="app"></div>
+  <script src="react/build/react.js"></script>
+  <script src="react/build/react-dom.js"></script>
+  <script>
+    var MyComponent = React.createClass({
+      propTypes: {
+        name   : React.PropTypes.string.isRequired,
+        age    : React.PropTypes.number.isRequired,
+        address: React.PropTypes.string
+      },
+      getDefaultProps: function() {
+        return {
+          address: "不明"
+        }
+      },
+      render: function() {
+        return React.DOM.span(null,
+          "名前は" + this.props.name + "。" +
+          "年齢は" + this.props.age + "歳。" +
+          "連絡先は" + this.props.address + "。"
+        );
+      }
+    });
+    ReactDOM.render(
+      React.createElement(MyComponent, {
+        name: "ボブ",
+        age : 40
+      }),
+      document.getElementById("app")
+    );
+  </script>
+</body>
+</html>
