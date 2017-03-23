@@ -20,7 +20,7 @@
       componentWillUnmount: function() { this._log('componentWillUnmount', arguments); },
     };
     var TextAreaCounter = React.createClass({
-      name: "TextAreaCounter",
+      displayName: "TextAreaCounter",
       mixins: [logMixin],
       propTypes: {
         defaultValue: React.PropTypes.string

@@ -12,6 +12,7 @@
   <script src="react/build/react-dom.js"></script>
   <script>
     var MyComponent = React.createClass({
+      displayName: "MyComponent",
       render: function() {
         return React.DOM.span(null, "app id: " + this.props.appid + ".");
       }

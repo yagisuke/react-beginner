@@ -10,6 +10,7 @@
   <script src="react/build/react-dom.js"></script>
   <script>
     var MyComponent = React.createClass({
+      displayName: "MyComponent",
       propTypes: {
         name   : React.PropTypes.string.isRequired,
         age    : React.PropTypes.number.isRequired,

@@ -10,7 +10,7 @@
   <script src="react/build/react-dom.js"></script>
   <script>
     var Counter = React.createClass({
-      name: "Counter",
+      displayName: "Counter",
       propTypes: {
         count: React.PropTypes.number.isRequired
       },
@@ -23,7 +23,7 @@
       }
     });
     var TextAreaCounter = React.createClass({
-      name: "TextAreaCounter",
+      displayName: "TextAreaCounter",
       propTypes: {
         defaultValue: React.PropTypes.string
       },

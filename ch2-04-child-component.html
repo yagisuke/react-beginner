@@ -20,7 +20,7 @@
       componentWillUnmount: function() { this._log('componentWillUnmount', arguments); },
     };
     var Counter = React.createClass({
-      name: "Counter",
+      displayName: "Counter",
       mixins: [logMixin],
       propTypes: {
         count: React.PropTypes.number.isRequired
