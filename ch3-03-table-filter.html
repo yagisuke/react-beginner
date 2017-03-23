@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <title>Chapter3-03 Table Search</title>
+  <title>Chapter3-03 Table Filter</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -42,7 +42,7 @@
           sortby: null,
           isdesc: false,
           edit: null, // {row, cell}
-          issearch: false,
+          isfilter: false,
         };
       },
 
@@ -80,51 +80,51 @@
         });
       },
 
-      _preSearchData: null,
+      _preFilterData: null,
 
-      _toggleSearch: function() {
-        if (this.state.issearch) {
+      _toggleFilter: function() {
+        if (this.state.isfilter) {
           this.setState({
-            data: this._preSearchData,
-            issearch: false,
+            data: this._preFilterData,
+            isfilter: false,
           });
-          this._preSearchData = null;
+          this._preFilterData = null;
         } else {
-          this._preSearchData = this.state.data;
+          this._preFilterData = this.state.data;
           this.setState({
-            issearch: true,
+            isfilter: true,
           });
         }
       },
 
-      _search: function(e) {
+      _filter: function(e) {
         var needle = e.target.value.toLowerCase();
 
         if (!needle) {
-          this.setState({data: this._preSearchData});
+          this.setState({data: this._preFilterData});
           return;
         }
 
         var index = e.target.dataset.index;
-        var searchdata = this._preSearchData.filter(function(row) {
+        var filterdata = this._preFilterData.filter(function(row) {
           return row[index].toString().toLowerCase().indexOf(needle) > -1;
         });
-        this.setState({data: searchdata});
+        this.setState({data: filterdata});
       },
 
       _renderToolbar: function() {
         return React.DOM.button({
-            onClick: this._toggleSearch,
+            onClick: this._toggleFilter,
             className: 'button',
           }, '検索');
       },
 
-      _renderSearch: function() {
-        if (!this.state.issearch) {
+      _renderFilter: function() {
+        if (!this.state.isfilter) {
           return null;
         }
         return (
-          React.DOM.tr({onChange: this._search},
+          React.DOM.tr({onChange: this._filter},
             this.props.headers.map(function(_ignore, index) {
               return React.DOM.td({key: index},
                 React.DOM.input({
@@ -151,7 +151,7 @@
               )
             ),
             React.DOM.tbody({onDoubleClick: this._showEditor},
-              this._renderSearch(),
+              this._renderFilter(),
               this.state.data.map(function(row, rowindex) {
                 return (
                   React.DOM.tr({key: rowindex},
