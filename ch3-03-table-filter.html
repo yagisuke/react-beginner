@@ -104,8 +104,8 @@
         }
 
         var index = e.target.dataset.index;
-        var filterdata = this._preFilterData.filter(function(row) {
-          return row[index].toString().toLowerCase().indexOf(inputtext) > -1;
+        var filterdata = this._preFilterData.filter(function(rowitem) {
+          return rowitem[index].toString().toLowerCase().indexOf(inputtext) > -1;
         });
         this.setState({data: filterdata});
       },
@@ -113,7 +113,7 @@
       _renderToolbar: function() {
         return React.DOM.button({
             onClick: this._toggleFilter,
-            className: 'button',
+            className: 'button'
           }, '検索');
       },
 
