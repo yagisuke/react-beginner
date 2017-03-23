@@ -86,28 +86,26 @@
         if (this.state.isfilter) {
           this.setState({
             data: this._preFilterData,
-            isfilter: false,
+            isfilter: false
           });
           this._preFilterData = null;
         } else {
           this._preFilterData = this.state.data;
-          this.setState({
-            isfilter: true,
-          });
+          this.setState({isfilter: true});
         }
       },
 
       _filter: function(e) {
-        var needle = e.target.value.toLowerCase();
+        var inputtext = e.target.value.toLowerCase();
 
-        if (!needle) {
+        if (!inputtext) {
           this.setState({data: this._preFilterData});
           return;
         }
 
         var index = e.target.dataset.index;
         var filterdata = this._preFilterData.filter(function(row) {
-          return row[index].toString().toLowerCase().indexOf(needle) > -1;
+          return row[index].toString().toLowerCase().indexOf(inputtext) > -1;
         });
         this.setState({data: filterdata});
       },
