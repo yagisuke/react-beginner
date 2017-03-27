@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>Chapter3-08 Input</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div id="app1"></div>
+  <div id="app2"></div>
+  <div id="app3"></div>
+  <div id="app4"></div>
+  <script src="react/build/react.js"></script>
+  <script src="react/build/react-dom.js"></script>
+  <script src="babel/browser.js"></script>
+  <script type="text/babel">
+    function log(event) {
+      console.log("[value]\n", event.target.value);
+      console.log("[defaultValue]\n", event.target.defaultValue);
+    }
+
+    ReactDOM.render(
+      <input defaultValue="hello" onChange={log} />,
+      document.getElementById("app1")
+    );
+
+    ReactDOM.render(
+      <textarea defaultValue="hello\nworld" onChange={log} />, /* hello\nworld */
+      document.getElementById("app2")
+    );
+
+    ReactDOM.render(
+      <textarea defaultValue={"hello\nworld"} onChange={log} />, /* hello<br>world */
+      document.getElementById("app3")
+    );
+
+    var MySelect = React.createClass({
+      getInitialState: function() {
+        return {value: 'do'}
+      },
+      _onChange: function(event) {
+        log(event);
+        this.setState({value: event.target.value});
+      },
+      render: function() {
+        return (
+          /* selectにvalueを持たせることは推奨されていない */
+          <select value={this.state.value} onChange={this._onChange}>
+            <option value="plan">PLAN</option>
+            <option value="do">DO</option>
+            <option value="check">CHECK</option>
+            <option value="action">ACTION</option>
+          </select>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <MySelect />,
+      document.getElementById('app4')
+    )
+  </script>
