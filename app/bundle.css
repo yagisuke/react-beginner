@@ -1,29 +1,47 @@
+.Button {
+  background-color: #6f001b;
+  border-radius: 28px;
+  border: 0;
+  box-shadow: 0 1px 1px #d9d9d9;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 15px;
+  text-decoration: none;
+  transition-duration: 0.1s;
+  transition-property: transform;
+}
+.Button:hover {
+  transform: scale(1.1);
+}
 #app {
   width: 960px;
   margin: 0 auto;
 }
 
-table {
+.Excel {
   width: 100%;
   border-spacing: 0;
   font-size: 14px;
 }
-table tr {
+.Excel tr {
   background: #fff;
 }
-table tr:nth-child(2n+1) {
+.Excel tr:nth-child(2n+1) {
   background: #f1f6fc;
 }
-table tr:last-child td:first-child {
+.Excel tr:last-child td:first-child {
   border-radius: 0 0 0 5px;
 }
-table tr:last-child td:last-child {
+.Excel tr:last-child td:last-child {
   border-radius: 0 0 5px 0;
 }
-table tr:hover {
+.Excel tr:hover {
   background: #bbd4ee;
 }
-table th {
+.Excel th {
   color: #fff;
   padding: 8px 15px;
   background: #258;
@@ -37,24 +55,25 @@ table th {
   text-align: center;
   text-shadow: 0 -1px 0 rgba(34,85,136,0.9);
 }
-table th:first-child {
+.Excel th:first-child {
   border-radius: 5px 0 0 0;
 }
-table th:last-child {
+.Excel th:last-child {
   border-radius: 0 5px 0 0;
   border-right: 1px solid #258;
 }
-table td {
+.Excel td {
   padding: 8px 15px;
   border-bottom: 1px solid #84b2e0;
   border-left: 1px solid #84b2e0;
   text-align: center;
 }
-table td:last-child {
+.Excel td:last-child {
   border-right: 1px solid #84b2e0;
 }
 
-.button {
+.Toolbox > a,
+.Toolbox > button {
   position: relative;
   display: inline-block;
   margin: 20px 0 20px 20px;
@@ -71,7 +90,8 @@ table td:last-child {
   font-size: 11px;
   cursor: pointer;
 }
-.button::after {
+.Toolbox > a::after,
+.Toolbox > button::after {
   position: absolute;
   top: 3px;
   right: 3px;
@@ -88,6 +108,34 @@ table td:last-child {
   height: 50px;
   vertical-align: middle;
   width: 50px;
+}
+.Rating {
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 28px;
+}
+
+.Rating.RatingReadonly{
+  cursor: auto;
+}
+
+.Rating > span {
+  color: grey;
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.Rating .RatingOn:before {
+   color: gold;
+   content: "\2605";
+   left: 0;
+   padding: 1px;
+   position: absolute;
+}
+.Suggest {
+
 }
 html {
   background: white;
