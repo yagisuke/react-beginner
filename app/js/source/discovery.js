@@ -16,7 +16,7 @@ ReactDOM.render(
     <h1>コンポーネント一覧</h1>
 
     <h2>Logo</h2>
-    <div style={{display: 'inline-block', background: 'purple'}}><Logo /></div>
+    <div><b><Logo />React 勉強中。</b></div>
 
     <h2>Button</h2>
     <div>onClickが指定されたButton: <Button onClick={() => alert('クリックされました')}>クリック</Button></div>
