@@ -51,17 +51,18 @@ var Suggest = function (_Component) {
         'div',
         null,
         _react2.default.createElement('input', {
+          id: this.props.id,
           list: randomid,
           defaultValue: this.props.defaultValue,
           onChange: function onChange(e) {
             return _this2.setState({ value: e.target.value });
-          },
-          id: this.props.id }),
+          }
+        }),
         _react2.default.createElement(
           'datalist',
           { id: randomid },
           this.props.options.map(function (item, index) {
-            return _react2.default.createElement('option', { value: item, key: index });
+            return _react2.default.createElement('option', { key: index, value: item });
           })
         )
       );

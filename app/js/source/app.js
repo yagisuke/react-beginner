@@ -2,25 +2,23 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import schema from './schema';
 import Logo from './components/Logo';
-import Excel from './components/Excel';
+import Whinepad from './components/Whinepad';
 
-var headers = localStorage.getItem("headers");
-var data = localStorage.getItem("data");
-
-if (!headers) {
-  headers = ['タイトル', '年', '評価', 'コメント'];
-  data = [
-    ['テスト', '2015', '3', '普通でした。'],
-    ['てすと', '2000', '4', 'ちょっと良かったです。'],
-    ['TEST',  '1977', '1', 'ダメです。']
-  ];
+let data = JSON.parse(localStorage.getItem('data'));
+if (!data) {
+  data = {};
+  schema.forEach(item => data[item.id] = item.sample);
+  data = [data];
 }
 
 ReactDOM.render(
-  <main>
-    <h1><Logo />アプリケーションへようこそ。</h1>
-    <Excel headers={headers} initialData={data} />
-  </main>,
+  <div>
+    <div className="app-header">
+      <Logo />HELLO REACT.
+    </div>
+    <Whinepad schema={schema} initialData={data} />
+  </div>,
   document.getElementById('app')
-);
+)

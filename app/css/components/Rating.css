@@ -4,18 +4,15 @@
   white-space: nowrap;
   font-size: 28px;
 }
-
 .Rating.RatingReadonly{
   cursor: auto;
 }
-
 .Rating > span {
   color: grey;
   display: inline-block;
   position: relative;
   width: 1.1em;
 }
-
 .Rating .RatingOn:before {
    color: gold;
    content: "\2605";

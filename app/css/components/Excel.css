@@ -1,85 +1,37 @@
-#app {
-  width: 960px;
-  margin: 0 auto;
-}
-
-.Excel {
+.Excel table {
   width: 100%;
-  border-spacing: 0;
-  font-size: 14px;
-}
-.Excel tr {
-  background: #fff;
-}
-.Excel tr:nth-child(2n+1) {
-  background: #f1f6fc;
-}
-.Excel tr:last-child td:first-child {
-  border-radius: 0 0 0 5px;
-}
-.Excel tr:last-child td:last-child {
-  border-radius: 0 0 5px 0;
-}
-.Excel tr:hover {
-  background: #bbd4ee;
 }
 .Excel th {
-  color: #fff;
-  padding: 8px 15px;
-  background: #258;
-  background: -moz-linear-gradient(rgba(34, 85, 136, 0.7), rgba(34, 85, 136, 0.9) 50%);
-  background: -webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34, 85, 136, 0.7)), to(rgba(34, 85, 136, 0.9)));
-  font-weight: bold;
-  border-left: 1px solid #258;
-  border-top: 1px solid #258;
-  border-bottom: 1px solid #258;
-  line-height: 1.2;
+  color: #7f7f7f;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 5px;
   text-align: center;
-  text-shadow: 0 -1px 0 rgba(34,85,136,0.9);
-}
-.Excel th:first-child {
-  border-radius: 5px 0 0 0;
-}
-.Excel th:last-child {
-  border-radius: 0 5px 0 0;
-  border-right: 1px solid #258;
 }
 .Excel td {
-  padding: 8px 15px;
-  border-bottom: 1px solid #84b2e0;
-  border-left: 1px solid #84b2e0;
+  background-color: #ffffff;
+  padding: 5px;
+}
+.Excel .ExcelNotSortable {
+  cursor: default;
+}
+.Excel input {
+  font: 16px Arial;
+}
+.Excel .ExcelEditable {
+  cursor: cell;
+}
+.Excel .ExcelEditable:hover {
+  background: #FBFBFB;
+}
+.Excel .ExcelDataCenter {
   text-align: center;
 }
-.Excel td:last-child {
-  border-right: 1px solid #84b2e0;
+.Excel .ExcelDataLeft {
+  padding: 0 10px;
+  text-align: left;
 }
-
-.Toolbox > a,
-.Toolbox > button {
-  position: relative;
-  display: inline-block;
-  margin: 20px 0 20px 20px;
-  padding: 0.8em 4em;
-  background: #258;
-  background: -moz-linear-gradient(rgba(34, 85, 136, 0.7), rgba(34, 85, 136, 0.9) 50%);
-  background: -webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34, 85, 136, 0.7)), to(rgba(34, 85, 136, 0.9)));
-  border: 1px solid rgba(34, 85, 136, 0.9);
-  border-radius: 4px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  font-size: 11px;
-  cursor: pointer;
-}
-.Toolbox > a::after,
-.Toolbox > button::after {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  bottom: 3px;
-  left: 3px;
-  content: '';
-  border: 2px dashed #fff;
-  border-radius: 0.4em 2em 0.5em 3em / 3em 0.5em 2em 0.5em;
+.Excel .ExcelDataRight {
+  text-align: right;
 }

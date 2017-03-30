@@ -7,7 +7,11 @@ class Rating extends Component {
     this.state = {
       rating: props.defaultValue,
       tmpRating: props.defaultValue,
-    }
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setRating(nextProps.defaultValue);
   }
 
   getValue() {
@@ -30,10 +34,6 @@ class Rating extends Component {
   reset() {
     this.setTemp(this.getValue());
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.setRating(nextProps.defaultValue);
-  // }
 
   render() {
     const stars = [];

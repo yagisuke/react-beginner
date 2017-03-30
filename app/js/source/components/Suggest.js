@@ -20,14 +20,13 @@ class Suggest extends Component {
     return (
       <div>
         <input
+          id={this.props.id}
           list={randomid}
           defaultValue={this.props.defaultValue}
           onChange={e => this.setState({value: e.target.value})}
-          id={this.props.id} />
+          />
         <datalist id={randomid}>{
-          this.props.options.map((item, index) =>
-            <option value={item} key={index} />
-          )
+          this.props.options.map((item, index) => <option key={index} value={item} />)
         }</datalist>
       </div>
     )

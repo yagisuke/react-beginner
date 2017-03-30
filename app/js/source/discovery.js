@@ -7,6 +7,9 @@ import Button from './components/Button';
 import Suggest from './components/Suggest';
 import Rating from './components/Rating';
 import FormInput from './components/FormInput';
+import Form from './components/Form';
+import Actions from './components/Actions';
+import Dialog from './components/Dialog';
 
 ReactDOM.render(
   <div style={{pading: '20px'}}>
@@ -58,6 +61,33 @@ ReactDOM.render(
         </tr>
       </tbody>
     </table>
+
+    <h2>Form</h2>
+    <Form
+      fields={[
+        {label: '評価', type: 'rating', id: 'rateme'},
+        {label: '挨拶', id: 'freetext'}
+      ]}
+      initialData={{rateme: 4, freetext: 'こんにちわ'}}
+      readonly={true} />
+
+    <h2>Actions</h2>
+    <div><Actions onAction={type => alert(type)} /></div>
+
+    <h2>Dialog</h2>
+    <Dialog
+      header="単純な例"
+      onAction={type => alert(type)}>
+      こんにちわ。
+    </Dialog>
+    <Dialog
+      header="キャンセルボタンなしのカスタムのボタン"
+      hasCancel={false}
+      confirmLabel="ラベル"
+      onAction={type => alert(type)}>
+      なんでも表示できます。例えば、
+      <Button>ボタン</Button>
+    </Dialog>
   </div>,
   document.getElementById('discovery')
 );

@@ -38,6 +38,11 @@ var Rating = function (_Component) {
   }
 
   _createClass(Rating, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      this.setRating(nextProps.defaultValue);
+    }
+  }, {
     key: 'getValue',
     value: function getValue() {
       return this.state.rating;
@@ -62,11 +67,6 @@ var Rating = function (_Component) {
     value: function reset() {
       this.setTemp(this.getValue());
     }
-
-    // componentWillReceiveProps(nextProps) {
-    //   this.setRating(nextProps.defaultValue);
-    // }
-
   }, {
     key: 'render',
     value: function render() {

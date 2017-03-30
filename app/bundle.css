@@ -1,12 +1,38 @@
+.Actions span {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  margin: 5px 15px;
+  border-radius: 150%;
+  border: 2px solid black;
+  color: black;
+  font-size: 27px;
+  font-weight: bold;
+  text-align: center;
+  transition-duration: 0.1s;
+  transition-property: transform;
+  cursor: pointer;
+}
+.Actions span:hover {
+  transform: scale(1.1);
+}
+.Actions .ActionsInfo {;
+  border-color: #3498DB;
+  color: #3498DB;
+}
+.Actions .ActionsDelete {
+  border-color: #B7477D;
+  color: #B7477D;
+}
 .Button {
-  background-color: #6f001b;
+  background-color: #205081;
   border-radius: 28px;
   border: 0;
   box-shadow: 0 1px 1px #d9d9d9;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   padding: 5px 15px;
   text-decoration: none;
@@ -16,98 +42,115 @@
 .Button:hover {
   transform: scale(1.1);
 }
-#app {
-  width: 960px;
-  margin: 0 auto;
+.Dialog {
+  border: 1px solid lightgray;
 }
-
-.Excel {
+.DialogModalOpen {
+  overflow: hidden; /* no body scroll */
+}
+.Dialog .DialogHeader {
+  background-color: #205081;
+  color: #F0F0F0;
+  font-family: Norican, cursive;
+  font-size: 20px;
+  margin: 0;
+  padding: 10px 10px 20px;
+  text-align: left;
+}
+.Dialog .DialogBody {
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+  max-height: 50vh;
+  overflow-x: hidden;
+  padding: 10px 30px 30px;
+  text-align: center;
+  font-size: 18px;
+}
+.Dialog .DialogFooter {
+  padding: 10px;
+  text-align: right;
+}
+.DialogModal {
+	background: rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+.DialogModal .DialogModalWrap {
+	background: #fff;
+	margin: 5% auto;
+	width: 350px;
+}
+.DialogDismiss {
+  color: gray;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.DialogFooter .Button {
+  margin: 10px;
+}
+.Excel table {
   width: 100%;
-  border-spacing: 0;
-  font-size: 14px;
-}
-.Excel tr {
-  background: #fff;
-}
-.Excel tr:nth-child(2n+1) {
-  background: #f1f6fc;
-}
-.Excel tr:last-child td:first-child {
-  border-radius: 0 0 0 5px;
-}
-.Excel tr:last-child td:last-child {
-  border-radius: 0 0 5px 0;
-}
-.Excel tr:hover {
-  background: #bbd4ee;
 }
 .Excel th {
-  color: #fff;
-  padding: 8px 15px;
-  background: #258;
-  background: -moz-linear-gradient(rgba(34, 85, 136, 0.7), rgba(34, 85, 136, 0.9) 50%);
-  background: -webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34, 85, 136, 0.7)), to(rgba(34, 85, 136, 0.9)));
-  font-weight: bold;
-  border-left: 1px solid #258;
-  border-top: 1px solid #258;
-  border-bottom: 1px solid #258;
-  line-height: 1.2;
+  color: #7f7f7f;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 5px;
   text-align: center;
-  text-shadow: 0 -1px 0 rgba(34,85,136,0.9);
-}
-.Excel th:first-child {
-  border-radius: 5px 0 0 0;
-}
-.Excel th:last-child {
-  border-radius: 0 5px 0 0;
-  border-right: 1px solid #258;
 }
 .Excel td {
-  padding: 8px 15px;
-  border-bottom: 1px solid #84b2e0;
-  border-left: 1px solid #84b2e0;
+  background-color: #ffffff;
+  padding: 5px;
+}
+.Excel .ExcelNotSortable {
+  cursor: default;
+}
+.Excel input {
+  font: 16px Arial;
+}
+.Excel .ExcelEditable {
+  cursor: cell;
+}
+.Excel .ExcelEditable:hover {
+  background: #FBFBFB;
+}
+.Excel .ExcelDataCenter {
   text-align: center;
 }
-.Excel td:last-child {
-  border-right: 1px solid #84b2e0;
+.Excel .ExcelDataLeft {
+  padding: 0 10px;
+  text-align: left;
 }
-
-.Toolbox > a,
-.Toolbox > button {
-  position: relative;
-  display: inline-block;
-  margin: 20px 0 20px 20px;
-  padding: 0.8em 4em;
-  background: #258;
-  background: -moz-linear-gradient(rgba(34, 85, 136, 0.7), rgba(34, 85, 136, 0.9) 50%);
-  background: -webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34, 85, 136, 0.7)), to(rgba(34, 85, 136, 0.9)));
-  border: 1px solid rgba(34, 85, 136, 0.9);
-  border-radius: 4px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  font-size: 11px;
-  cursor: pointer;
+.Excel .ExcelDataRight {
+  text-align: right;
 }
-.Toolbox > a::after,
-.Toolbox > button::after {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  bottom: 3px;
-  left: 3px;
-  content: '';
-  border: 2px dashed #fff;
-  border-radius: 0.4em 2em 0.5em 3em / 3em 0.5em 2em 0.5em;
+.Form .FormLabel {
+  color: #A0A0A0;
+  display: block;
+  font-size: 12px;
+  padding: 12px 0 6px;
+}
+.Form .FormRow {
+  padding-left: 20px;
+  text-align: left;
+}
+.FormInput {  
 }
 .Logo {
-  background-image: url('images/thumbnail.jpg');
-  background-size: cover;
   display: inline-block;
-  height: 50px;
-  vertical-align: middle;
   width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  border: 3px solid #fff;
+  background-image: url('images/thumbnail.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: sub;
 }
 .Rating {
   cursor: pointer;
@@ -115,18 +158,15 @@
   white-space: nowrap;
   font-size: 28px;
 }
-
 .Rating.RatingReadonly{
   cursor: auto;
 }
-
 .Rating > span {
   color: grey;
   display: inline-block;
   position: relative;
   width: 1.1em;
 }
-
 .Rating .RatingOn:before {
    color: gold;
    content: "\2605";
@@ -137,7 +177,53 @@
 .Suggest {
 
 }
+.Whinepad .WhinepadToolbar {
+  margin: 40px;
+}
+.Whinepad .WhinepadToolbarAdd,
+.Whinepad .WhinepadToolbarSearch {
+  float: right;
+}
+.Whinepad .WhinepadToolbarAddButton {
+  font-size: 20px;
+}
+.Whinepad .WhinepadDatagrid {
+  clear: both;
+  margin: 40px;
+  padding-top: 20px;
+}
 html {
-  background: white;
-  font: 14px Arial;
+  background-color: #f0f0f0;
+  font: 16px Arial;
+}
+body {
+  margin: 0;
+}
+input, textarea {
+  font-size: 14px;
+  padding: 10px;
+}
+.app-header {
+  background-color: #205081;
+  color: #F0F0F0;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  margin: 0;
+  padding: 20px 20px 20px 14px;
+  line-height: 1;
+}
+.schema-name {
+  color: #aaa;
+  font-size: 18px;
+  font-weight: bold;
+}
+.schema-year {
+  color: gray;
+  font-size: 16px;
+}
+.schema-grape {
+  color: #205081;
+  font-size: 16px;
+  font-weight: bold;
 }

@@ -1,4 +1,21 @@
 html {
-  background: white;
-  font: 14px Arial;
+  background-color: #f0f0f0;
+  font: 16px Arial;
+}
+body {
+  margin: 0;
+}
+input, textarea {
+  font-size: 14px;
+  padding: 10px;
+}
+.app-header {
+  background-color: #205081;
+  color: #F0F0F0;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  margin: 0;
+  padding: 20px 20px 20px 14px;
+  line-height: 1;
 }
