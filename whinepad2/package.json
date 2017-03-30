@@ -23,6 +23,12 @@
       "babel",
       "react"
     ],
-    "extends": "eslint:recommended"
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true
+    },
+    "rules": {
+      "react/jsx-uses-react": 1
+    }
   }
 }
