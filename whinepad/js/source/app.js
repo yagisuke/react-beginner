@@ -16,7 +16,7 @@ if (!data) {
 ReactDOM.render(
   <div>
     <div className="app-header">
-      <Logo />HELLO REACT.
+      <Logo />Whinepad.
     </div>
     <Whinepad schema={schema} initialData={data} />
   </div>,
