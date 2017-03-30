@@ -16,12 +16,13 @@
     "watch": "watch \"sh scripts/build.sh\" js/source css/"
   },
 
-  "eslintConfig": "ESLintの設定",
+  "eslintConfig": "コメント：ESLintの設定",
   "eslintConfig": {
     "parser": "babel-eslint",
     "plugins": [
       "babel",
       "react"
-    ]
+    ],
+    "extends": "eslint:recommended"
   }
 }
