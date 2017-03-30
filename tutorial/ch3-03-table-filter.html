@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <title>Chapter3-04 Table Download</title>
+  <title>Chapter3-03 Table Filter</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <div id="app"></div>
@@ -13,13 +13,13 @@
     var headers = ["タイトル", "著書", "言語", "出版年", "売上部数"];
 
     var data = [
-      ["Fate/Grand Order カルデアエース", "TYPE-MOON", "Japanese", "2017", "300"],
-      ["大合格 参考書じゃなくオレに聞け! ", "中田 敦彦", "Japanese", "2017", "200"],
-      ["Linuxカーネル「ソースコード」を読み解く (I・O BOOKS)", "平田 豊", "Japanese", "2016", "250"],
-      ["The Linux Programming Interface", "Michael Kerrisk", "English", "2010", "350"],
-      ["Cracking the Coding Interview", "Gayle Laakmann Mcdowell", "English", "2015", "150"],
-      ["入門Chef Solo", "伊藤直也", "Japanese", "2013", "130"],
-      ["ゲーム界のトップに立った天才プログラマー　岩田聡の原点", "岩田聡の記録を残す会", "Japanese", "2016", "100"],
+      ["Fate/Grand Order カルデアエース", "TYPE-MOON", "Japanese", 2017, 300],
+      ["大合格 参考書じゃなくオレに聞け! ", "中田 敦彦", "Japanese", 2017, 200],
+      ["Linuxカーネル「ソースコード」を読み解く (I・O BOOKS)", "平田 豊", "Japanese", 2016, 250],
+      ["The Linux Programming Interface", "Michael Kerrisk", "English", 2010, 350],
+      ["Cracking the Coding Interview", "Gayle Laakmann Mcdowell", "English", 2015, 150],
+      ["入門Chef Solo", "伊藤直也", "Japanese", 2013, 130],
+      ["ゲーム界のトップに立った天才プログラマー　岩田聡の原点", "岩田聡の記録を残す会", "Japanese", 2016, 100],
     ];
 
     var Excel = React.createClass({
@@ -31,7 +31,7 @@
         ),
         initialData: React.PropTypes.arrayOf(
           React.PropTypes.arrayOf(
-            React.PropTypes.string
+            React.PropTypes.any
           )
         )
       },
@@ -110,36 +110,11 @@
         this.setState({data: filterdata});
       },
 
-      _download: function(format, ev) {
-        var contents = format === 'json' ? JSON.stringify(this.state.data) : this.state.data.reduce(function(result, row) {
-          return result + row.reduce(function(rowresult, cell, idx) {
-            return rowresult + '"' + cell.replace(/"/g, '""') + '"' + (idx < row.length - 1 ? ',' : '');
-          }, '') + "\n";
-        }, '');
-
-        var URL = window.URL || window.webkitURL;
-        var blob = new Blob([contents], {type: 'text/' + format});
-        ev.target.href = URL.createObjectURL(blob);
-        ev.target.download = format + '-data.' + format;
-      },
-
       _renderToolbar: function() {
-        return  React.DOM.div(null,
-          React.DOM.button({
+        return React.DOM.button({
             onClick: this._toggleFilter,
             className: 'button'
-          }, '検索'),
-          React.DOM.a({
-            onClick: this._download.bind(this, 'json'),
-            href: 'json-data.json',
-            className: 'button'
-          }, 'JSONダウンロード'),
-          React.DOM.a({
-            onClick: this._download.bind(this, 'csv'),
-            href: 'csv-data.csv',
-            className: 'button'
-          }, 'CSVダウンロード')
-        );
+          }, '検索');
       },
 
       _renderFilter: function() {
@@ -185,13 +160,13 @@
                         content = React.DOM.form({onSubmit: this._save},
                           React.DOM.input({
                             type: 'text',
-                            defaultValue: cell
+                            defaultValue: cell,
                           })
                         );
                       }
                       return React.DOM.td({
                         key: index,
-                        'data-row': rowindex
+                        'data-row': rowindex,
                       }, content);
                     }, this)
                   )
