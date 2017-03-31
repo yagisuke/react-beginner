@@ -66,7 +66,7 @@ ReactDOM.render(
     <Form
       fields={[
         {label: '評価', type: 'rating', id: 'rateme'},
-        {label: '挨拶', id: 'freetext'}
+        {label: '挨拶', id: 'freetext'},
       ]}
       initialData={{rateme: 4, freetext: 'こんにちわ'}}
       readonly={true} />

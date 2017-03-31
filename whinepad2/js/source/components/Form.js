@@ -51,7 +51,7 @@ Form.propTypes = {
     options: PropTypes.arrayOf(PropTypes.string),
   })).isRequired,
   initialData: PropTypes.object,
-  readonly: PropTypes.bool
+  readonly: PropTypes.bool,
 };
 
 export default Form

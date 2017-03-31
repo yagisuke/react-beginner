@@ -64,7 +64,7 @@ class Whinepad extends Component {
   }
 
   _doneSearching() {
-    this.setState({data: this._preSearchData,});
+    this.setState({data: this._preSearchData});
   }
 
   render() {

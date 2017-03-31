@@ -66,7 +66,7 @@ class Excel extends Component {
       dialog: {
         type: action,
         idx: rowidx,
-      }
+      },
     });
   }
 

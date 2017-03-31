@@ -19,9 +19,7 @@ class Rating extends Component {
   }
 
   setTemp(rating) {
-    this.setState({
-      tmpRating: rating
-    });
+    this.setState({tmpRating: rating});
   }
 
   setRating(rating) {
