@@ -21,7 +21,9 @@
       "browser": true
     },
     "rules": {
-      "react/jsx-uses-react": 1
+      "comma-dangle": [2, "always-multiline"],
+      "react/jsx-uses-react": 1,
+      "no-unused-vars": 1
     }
   }
 }
