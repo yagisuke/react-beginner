@@ -1,3 +1,7 @@
+# QA
+eslint js/source
+flow
+
 # JavaScriptのトランスパイル
 babel js/source/ -d js/build
 
