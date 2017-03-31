@@ -1,5 +1,5 @@
 # JavaScriptのトランスパイル
-babel --presets react,es2015 js/source -d js/build
+babel js/source/ -d js/build
 
 # JavaScriptのパッケージング
 browserify js/build/app.js -o bundle.js
