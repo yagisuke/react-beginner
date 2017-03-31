@@ -8,7 +8,7 @@
     ]
   },
   "script": {
-    "watch": "watch \"sh scripts/build.sh\" js/source css/"
+    "watch": "watch \"sh buildscript/build.sh\" js/source css/"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
