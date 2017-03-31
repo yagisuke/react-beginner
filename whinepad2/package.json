@@ -7,7 +7,7 @@
       "react"
     ]
   },
-  "script": {
+  "scripts": {
     "watch": "watch \"sh buildscript/build.sh\" js/source css/"
   },
   "eslintConfig": {
