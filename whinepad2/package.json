@@ -21,9 +21,16 @@
       "browser": true
     },
     "rules": {
-      "comma-dangle": [2, "always-multiline"],
+      "comma-dangle": [
+        2,
+        "always-multiline"
+      ],
       "react/jsx-uses-react": 1,
       "no-unused-vars": 1
     }
+  },
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "react-addons-test-utils": "^15.4.2"
   }
 }
