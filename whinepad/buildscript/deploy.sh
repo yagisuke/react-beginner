@@ -3,7 +3,7 @@ rm -rf __deployme
 mkdir __deployme
 
 # ビルド
-sh scripts/build.sh
+sh buidlscript/build.sh
 
 # JavaScriptのminify
 uglify -s bundle.js -o __deployme/bundle.js
