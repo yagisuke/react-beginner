@@ -1,22 +1,15 @@
 {
-  "name": "コメント：アプリ名を記述",
   "name": "Whinepad",
   "version": "2.0.0",
-
-  "babel": "コメント：babelの設定。> $babel js/source -d js/build",
   "babel": {
     "presets": [
       "es2015",
       "react"
     ]
   },
-
-  "script": "コメント：watchスクリプトの設定。> $npm run watch",
   "script": {
     "watch": "watch \"sh scripts/build.sh\" js/source css/"
   },
-
-  "eslintConfig": "コメント：ESLintの設定",
   "eslintConfig": {
     "parser": "babel-eslint",
     "plugins": [
