@@ -1,6 +1,7 @@
 # QA
-eslint js/source
+eslint js/source js/__tests__/ css/
 flow
+npm test
 
 # JavaScriptのトランスパイル
 babel js/source/ -d js/build
