@@ -1,5 +1,5 @@
 # QA
-eslint js/source js/__tests__/ css/
+eslint js/source/ css/
 flow
 npm test
 
