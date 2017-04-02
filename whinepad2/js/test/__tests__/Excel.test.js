@@ -32,4 +32,23 @@ describe('データの編集', () => {
     expect(cell.textContent).toBe(newname);
     expect(callback.mock.calls[0][0][0].name).toBe(newname)
   });
+  it('データを削除します', () => {
+    const callback = jest.genMockFunction();
+    const table = TestUtils.renderIntoDocument(
+      <Excel
+        schema={schema}
+        initialData={data}
+        onDataChange={callback} />
+    );
+
+    TestUtils.Simulate.click(
+      TestUtils.findRenderedDOMComponentWithClass(table, 'ActionsDelete')
+    );
+
+    TestUtils.Simulate.click(
+      TestUtils.findRenderedDOMComponentWithClass(table, 'Button')
+    );
+
+    expect(callback.mock.calls[0][0].length).toBe(0);
+  });
 });
