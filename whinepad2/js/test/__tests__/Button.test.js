@@ -1,5 +1,6 @@
 jest
   .dontMock('../../source/components/Button')
+  .dontMock('../Wrap')
   .dontMock('classnames')
 ;
 
@@ -8,25 +9,26 @@ import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 
 const Button = require('../../source/components/Button').default;
+const Wrap = require('../Wrap').default;
 
 describe('Buttonコンポーネンの描画', () => {
   it('<a>または<button>を描画', () => {
 
     const button = TestUtils.renderIntoDocument(
-      <div>
+      <Wrap>
         <Button>こんにちわ</Button>
-      </div>
+      </Wrap>
     );
 
     const a = TestUtils.renderIntoDocument(
-      <div>
+      <Wrap>
         <Button href="#">こんにちわ</Button>
-      </div>
+      </Wrap>
     );
     const b = TestUtils.renderIntoDocument(
-      <div>
+      <Wrap>
         <Button>こんにちわ</Button>
-      </div>
+      </Wrap>
     );
 
     expect(ReactDOM.findDOMNode(a).children[0].nodeName).toEqual('A');
@@ -35,7 +37,7 @@ describe('Buttonコンポーネンの描画', () => {
 
   it('カスタムのCSSクラスを指定', () => {
     const button = TestUtils.renderIntoDocument(
-      <div><Button className="YAGISUKE">こんにちわ</Button></div>
+      <Wrap><Button className="YAGISUKE">こんにちわ</Button></Wrap>
     );
 
     const buttonNode = ReactDOM.findDOMNode(button).children[0];
