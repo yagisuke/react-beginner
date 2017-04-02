@@ -19,5 +19,19 @@ describe('評価を表します', () => {
     expect(stars[4].className).toBeFalsy();
     expect(input.state.rating).toBe(0);
     expect(input.state.tmpRating).toBe(4);
+
+    TestUtils.Simulate.mouseOut(stars[3]);
+    expect(stars[0].className).toBeFalsy();
+    expect(stars[3].className).toBeFalsy();
+    expect(stars[4].className).toBeFalsy();
+    expect(input.state.rating).toBe(0);
+    expect(input.state.tmpRating).toBe(0);
+
+    TestUtils.Simulate.click(stars[3]);
+    expect(stars[0].className).toBe('RatingOn');
+    expect(stars[3].className).toBe('RatingOn');
+    expect(stars[4].className).toBeFalsy();
+    expect(input.state.rating).toBe(4);
+    expect(input.state.tmpRating).toBe(4);
   });
 });
