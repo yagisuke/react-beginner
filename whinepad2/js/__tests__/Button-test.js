@@ -39,7 +39,6 @@ describe('Buttonコンポーネンの描画', () => {
     );
 
     const buttonNode = ReactDOM.findDOMNode(button).children[0];
-    console.log(buttonNode.getAttribute('class'));
     expect(buttonNode.getAttribute('class')).toEqual('Button YAGISUKE');
   });
 });
