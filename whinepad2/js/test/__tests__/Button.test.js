@@ -1,5 +1,5 @@
 jest
-  .dontMock('../source/components/Button')
+  .dontMock('../../source/components/Button')
   .dontMock('classnames')
 ;
 
@@ -7,7 +7,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 
-const Button = require('../source/components/Button').default;
+const Button = require('../../source/components/Button').default;
 
 describe('Buttonコンポーネンの描画', () => {
   it('<a>または<button>を描画', () => {
