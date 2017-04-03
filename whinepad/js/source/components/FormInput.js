@@ -11,6 +11,7 @@ class FormInput extends Component {
 
   render() {
     const common = {
+      id: this.props.id,
       ref: 'input',
       defaultValue: this.props.defaultValue,
     };
